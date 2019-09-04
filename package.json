@@ -1,0 +1,23 @@
+{
+  "name": "reactjscalc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tiaflores/ReactJSCalculator.git"
+  },
+  "author": "Tia Flores",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tiaflores/ReactJSCalculator/issues"
+  },
+  "homepage": "https://github.com/tiaflores/ReactJSCalculator#readme",
+  "dependencies": {
+    "webpack": "^4.39.3",
+    "webpack-dev-server": "^3.8.0"
+  }
+}
