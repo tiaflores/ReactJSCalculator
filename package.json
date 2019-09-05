@@ -16,7 +16,8 @@
     "url": "https://github.com/tiaflores/ReactJSCalculator/issues"
   },
   "homepage": "https://github.com/tiaflores/ReactJSCalculator#readme",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "webpack": "^4.39.3",
     "webpack-dev-server": "^3.8.0"
   }
