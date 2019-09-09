@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from './components/buttons.js';
+import Buttons from './components/buttons.js';
 
 class App extends React.Component{
 
@@ -8,7 +8,7 @@ class App extends React.Component{
   render(){
     return(
 
-      <Button onClick={this.onClick}/>
+      <Buttons onClick={this.onClick}/>
 
     );
   }
