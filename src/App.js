@@ -4,11 +4,18 @@ import Result from './components/result.js';
 import History from './components/history.js';
 import './index.css';
 
-
 class App extends React.Component{
 
+  constructor(props){
+    super(props);
+    this.onClick = this.onClick.bind(this);
+  }
 
+onClick(){
 
+  
+
+}
 
 
   render(){
@@ -21,7 +28,5 @@ class App extends React.Component{
     );
   }
 }
-
-
 
 export default App;
