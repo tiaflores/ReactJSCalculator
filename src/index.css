@@ -1,3 +1,27 @@
 .col-xs-3{
-  padding-right: 10px;
+  padding-right: 2px;
+}
+.row{
+  padding-bottom: 2px;
+}
+Button{
+  width:100px;
+  padding-right:0px;
+}
+.resultcontainer{
+
+}
+#results{
+
+  background-color:#ffe229;
+}
+.appdiv{
+float:center;
+text-align:center;
+width:30%;
+
+}
+.history{
+  height:100px;
+  background-color: #f0f0f0;
 }
