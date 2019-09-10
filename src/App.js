@@ -7,19 +7,19 @@ import './index.css';
 
 class App extends React.Component{
 
+
+
+
+
   render(){
-
     return(
-
       <div className="appdiv">
       <Result onChange={this.state}/>
       <Buttons onClick={this.onClick}/>
       <History onChange={this.state}/>
       </div>
     );
-
   }
-
 }
 
 
