@@ -11,10 +11,7 @@ constructor(props){
   this.Calculate = this.Calculate.bind(this);
 }
 
-callBack = () => {
 
-
-}
 
 Calculate(){
 
@@ -30,7 +27,7 @@ Calculate(){
     return(
       <div className="appdiv">
       <Result onChange={this.state}/>
-      <Buttons onClick={this.callBack}/>
+      <Buttons onClick={this.Calculate}/>
       <History onChange={this.state}/>
       </div>
     );
