@@ -4,16 +4,24 @@ import Result from './components/result.js';
 import History from './components/history.js';
 import './index.css';
 
-class App extends React.Component{
+ class App extends React.Component{
 
-  constructor(props){
+constructor(props){
     super(props);
-    this.onClick = this.onClick.bind(this);
+  this.Calculate = this.Calculate.bind(this);
+}
+
+callBack = () => {
+
+
+}
+
+Calculate(){
+
+  alert(Buttons.e);
+  if(Buttons === "="){
+    alert("test");
   }
-
-onClick(){
-
-  
 
 }
 
@@ -22,7 +30,7 @@ onClick(){
     return(
       <div className="appdiv">
       <Result onChange={this.state}/>
-      <Buttons onClick={this.onClick}/>
+      <Buttons onClick={this.callBack}/>
       <History onChange={this.state}/>
       </div>
     );
