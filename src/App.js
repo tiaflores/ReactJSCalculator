@@ -1,37 +1,70 @@
+
+
 import React from 'react';
-import Buttons from './components/buttons.js';
 import Result from './components/result.js';
+import Buttons from './components/buttons.js';
 import History from './components/history.js';
-import './index.css';
 
- class App extends React.Component{
+export default class App extends React.Component {
+    constructor(){
+        super();
 
-constructor(props){
-    super(props);
-  this.Calculate = this.Calculate.bind(this);
+        this.state = {
+            result: "",
+            history: ""
+        }
+    }
+
+    onClick = button => {
+
+        if(button === "="){
+            this.calculate()
+        } else if(button === "CE"){
+            this.reset()
+        }else {
+            this.setState({
+                result: this.state.result + button
+            })
+        }
+    };
+
+
+    calculate(){
+        try {
+            this.setState({
+                result: eval(this.state.result),
+                history: this.state.result + " = " + eval(this.state.result)
+            })
+        } catch (e) {
+            this.setState({
+                result: "error",
+                history: "error"
+            })
+        }
+    };
+
+    reset() {
+        this.setState({
+            result: ""
+        })
+    };
+
+    backspace(){
+        this.setState({
+            result: this.state.result.slice(0, -1)
+        })
+    };
+
+    render() {
+        return (
+            <div>
+                <div className="appdiv">
+                    <div className="resultdiv"><Result result={this.state.result}/></div>
+
+                    <Buttons onClick={this.onClick}/>
+                    <History history={this.state.history}/>
+                </div>
+            </div>
+        );
+    }
 }
-
-
-
-Calculate(){
-
-  alert(Buttons.e);
-  if(Buttons === "="){
-    alert("test");
-  }
-
-}
-
-
-  render(){
-    return(
-      <div className="appdiv">
-      <Result onChange={this.state}/>
-      <Buttons onClick={this.Calculate}/>
-      <History onChange={this.state}/>
-      </div>
-    );
-  }
-}
-
-export default App;

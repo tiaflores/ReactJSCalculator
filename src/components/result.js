@@ -5,13 +5,13 @@ import '../index.css';
 
 export default class Result extends React.Component{
 
-render(){
-  return(
 
-    <div className="resultcontainer">
-    <p id="results">0</p>
-    </div>
-  );
-}
+    render() {
+            let {result} = this.props;
+            return (
+                <div className="results">
+                    <p>{result}</p>
+                </div>
+        );}
 
 }

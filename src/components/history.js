@@ -3,12 +3,12 @@ import '../index.css';
 
 export default class History extends React.Component{
 
-  render(){
-    return(
-      <div className="history">
-      <p></p>
-      </div>
-    );
-  }
+  render() {
+          let {history} = this.props;
+          return (
+              <div className="history">
+                  <p>{history}</p>
+              </div>
+      );}
 
 }

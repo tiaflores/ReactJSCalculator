@@ -7,22 +7,30 @@ body{
 .row{
   padding-bottom: 2px;
 }
+.container{
+  padding-top:10px;
+}
 Button{
   width:100px;
   padding-right:0px;
+
 }
 .resultcontainer{
 
 }
-#results{
+.results{
 
   background-color:#ffe229;
+}
+.resultdiv{
+    background-color:#ffe229;
+    height:50px;
+
 }
 .appdiv{
 float:center;
 text-align:center;
 width:30%;
-
 }
 .history{
   height:100px;
