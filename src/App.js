@@ -1,19 +1,22 @@
-
-
 import React from 'react';
 import Result from './components/result.js';
 import Buttons from './components/buttons.js';
 import History from './components/history.js';
 
 export default class App extends React.Component {
+
+
+
     constructor(){
         super();
 
         this.state = {
             result: "",
-            history: ""
+            history: " "
         }
+        this.hist();
     }
+
 
     onClick = button => {
 
@@ -28,6 +31,17 @@ export default class App extends React.Component {
         }
     };
 
+hist(){
+    const histArr = [];
+      histArr.push(this.state.history);
+    const listItems = histArr.map((histArr) =>
+    <li>{histArr}</li>
+  );
+
+    return(
+      <ul>{listItems}</ul>
+     )
+}
 
     calculate(){
         try {
@@ -50,14 +64,19 @@ export default class App extends React.Component {
     };
 
 
+
+
+
+
     render() {
+
         return (
             <div>
                 <div className="appdiv">
                     <div className="resultdiv"><Result result={this.state.result}/></div>
 
                     <Buttons onClick={this.onClick}/>
-                    <History history={this.state.history}/>
+                    <History history={this.hist()}/>
                 </div>
             </div>
         );
