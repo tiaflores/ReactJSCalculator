@@ -1,14 +1,11 @@
 body{
-  padding-top:20px;
+  padding-top:5px;
 }
 .col-xs-3{
   padding-right: 2px;
 }
 .row{
   padding-bottom: 2px;
-}
-.container{
-  padding-top:10px;
 }
 Button{
   width:100px;
@@ -25,12 +22,12 @@ Button{
 .resultdiv{
     background-color:#ffe229;
     height:50px;
-
 }
 .appdiv{
 float:center;
 text-align:center;
 width:30%;
+background-color:#ffe229;
 }
 .historyDiv{
   height:100px;

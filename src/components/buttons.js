@@ -4,10 +4,6 @@ import '../index.css';
 
 export default class Buttons extends React.Component{
 
-
-
-
-
   render(){
     return(
 
@@ -74,8 +70,6 @@ export default class Buttons extends React.Component{
                 <Button color="warning" name='+' onClick={(e) => this.props.onClick(e.target.name)}>+</Button>{' '}
               </div>
             </div>
-
-
       </div>
     );
   }

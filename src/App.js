@@ -13,7 +13,6 @@ export default class App extends React.Component {
             history: "",
             histArr: [],
         }
-
     }
 
     onClick = button => {
@@ -25,22 +24,18 @@ export default class App extends React.Component {
             this.setState({
                 result: this.state.result + button
             })
-
         }
     };
 
     calculate(){
         try {
 
-          let res = this.state.result;
-          let histArray = this.state.histArr;
-          let history = res + " = " + eval(res);
+          let res = this.state.result
+          let histArray = this.state.histArr
+          let history = res + " = " + eval(res)
 
-
-            this.setState({
-                result: eval(res)
-            })
-            histArray.push(history)
+            this.setState({result: eval(res)})
+          histArray.push(history)
 
         } catch (e) {
             this.setState({
@@ -48,8 +43,6 @@ export default class App extends React.Component {
                 history: "error"
             })
         }
-
-
     };
 
     reset() {
@@ -60,27 +53,20 @@ export default class App extends React.Component {
         })
     };
     hist(){
-      //if(this.state.histArr.length > 1){
         return this.state.histArr.map(historyArr => (
           <ul className="ulli">
           <li className="ulli">{historyArr}</li>
           </ul>
         ));
-    //  }
-
     }
 
     render() {
-
         return (
-            <div>
                 <div className="appdiv">
                     <div className="resultdiv"><Result result={this.state.result}/></div>
-
                     <Buttons onClick={this.onClick}/>
                     <div className="historyDiv"><History history={this.hist()}/></div>
                 </div>
-            </div>
         );
     }
 }
