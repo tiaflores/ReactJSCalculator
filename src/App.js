@@ -2,24 +2,21 @@ import React from 'react';
 import Result from './components/result.js';
 import Buttons from './components/buttons.js';
 import History from './components/history.js';
+import './index.css';
 
 export default class App extends React.Component {
-
-
-
     constructor(){
         super();
 
         this.state = {
             result: "",
-            history: " "
+            history: "",
+            histArr: [],
         }
-        this.hist();
+
     }
 
-
     onClick = button => {
-
         if(button === "="){
             this.calculate()
         } else if(button === "CE"){
@@ -28,45 +25,50 @@ export default class App extends React.Component {
             this.setState({
                 result: this.state.result + button
             })
+
         }
     };
 
-hist(){
-    const histArr = [];
-      histArr.push(this.state.history);
-    const listItems = histArr.map((histArr) =>
-    <li>{histArr}</li>
-  );
-
-    return(
-      <ul>{listItems}</ul>
-     )
-}
-
     calculate(){
         try {
+
+          let res = this.state.result;
+          let histArray = this.state.histArr;
+          let history = res + " = " + eval(res);
+
+
             this.setState({
-                result: eval(this.state.result),
-                history: this.state.result + " = " + eval(this.state.result)
+                result: eval(res)
             })
+            histArray.push(history)
+
         } catch (e) {
             this.setState({
                 result: "error",
                 history: "error"
             })
         }
+
+
     };
 
     reset() {
         this.setState({
-            result: ""
+            result: "",
+            history: "",
+            histArr: []
         })
     };
+    hist(){
+      //if(this.state.histArr.length > 1){
+        return this.state.histArr.map(historyArr => (
+          <ul className="ulli">
+          <li className="ulli">{historyArr}</li>
+          </ul>
+        ));
+    //  }
 
-
-
-
-
+    }
 
     render() {
 
@@ -76,7 +78,7 @@ hist(){
                     <div className="resultdiv"><Result result={this.state.result}/></div>
 
                     <Buttons onClick={this.onClick}/>
-                    <History history={this.hist()}/>
+                    <div className="historyDiv"><History history={this.hist()}/></div>
                 </div>
             </div>
         );
