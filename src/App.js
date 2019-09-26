@@ -29,18 +29,16 @@ export default class App extends React.Component {
 
     calculate(){
         try {
-
           let res = this.state.result
           let histArray = this.state.histArr
           let history = res + " = " + eval(res)
 
-            this.setState({result: eval(res)})
+          this.setState({result: eval(res)})
           histArray.push(history)
 
         } catch (e) {
             this.setState({
-                result: "error",
-                history: "error"
+                result: "error"
             })
         }
     };
@@ -52,6 +50,7 @@ export default class App extends React.Component {
             histArr: []
         })
     };
+
     hist(){
         return this.state.histArr.map(historyArr => (
           <ul className="ulli">

@@ -11,6 +11,6 @@ export default class Result extends React.Component{
                 <div className="results">
                     <p>{result}</p>
                 </div>
-        );}
-
+        );
+      }
 }
